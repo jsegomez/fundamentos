@@ -1,0 +1,200 @@
+# =============================================================================
+# Secrets and credentials (NEVER commit these)
+# =============================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+service-account*.json
+.aws/
+.gcp/
+.azure/
+.kube/
+.netrc
+.pypirc
+
+# =============================================================================
+# Python bytecode and packaging
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+develop-eggs/
+downloads/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =============================================================================
+# Virtual environments and dependency managers
+# =============================================================================
+.venv/
+venv/
+env/
+ENV/
+.python-version
+.pdm-python
+.pdm-build/
+.pixi/
+__pypackages__/
+.conda/
+# poetry.lock / uv.lock / Pipfile.lock: keep them committed for reproducibility
+
+# =============================================================================
+# Testing, coverage, linting and type-check caches
+# =============================================================================
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+cython_debug/
+
+# =============================================================================
+# Jupyter notebooks
+# =============================================================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# =============================================================================
+# AI / ML: datasets, models, weights and experiment artifacts
+# =============================================================================
+data/raw/
+data/processed/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.arrow
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.joblib
+*.sqlite
+*.sqlite3
+*.db
+
+# Model weights and checkpoints
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pb
+*.tflite
+*.bin
+*.gguf
+*.ggml
+*.keras
+
+# Experiment tracking and training outputs
+wandb/
+mlruns/
+mlartifacts/
+runs/
+lightning_logs/
+tensorboard/
+logs/
+outputs/
+.dvc/cache
+.dvc/tmp
+
+# Local caches for model hubs and embeddings
+.cache/
+.huggingface/
+huggingface/
+.chroma/
+chroma_db/
+faiss_index/
+vectorstore/
+vector_db/
+.langchain/
+
+# =============================================================================
+# Logs and temporary files
+# =============================================================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+tmp/
+temp/
+
+# =============================================================================
+# Editors and IDEs
+# =============================================================================
+.vscode/
+!.vscode/settings.json.example
+.idea/
+*.sublime-project
+*.sublime-workspace
+.spyderproject
+.spyproject
+.ropeproject
+
+# =============================================================================
+# Operating system files
+# =============================================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*:Zone.Identifier
+
+# =============================================================================
+# Docker and local infrastructure
+# =============================================================================
+docker-compose.override.yml
+.docker/
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# =============================================================================
+# Claude Code (local settings and personal memory)
+# =============================================================================
+.claude/settings.local.json
+.claude/projects/
