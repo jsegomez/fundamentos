@@ -1,6 +1,7 @@
 """
 Proyecto: CLI Chatbot
 """
+import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -17,6 +18,8 @@ Si no sabes algo, lo dices honestamente."""
 # Costos de la API en USD
 INPUT_COST = 0.10
 OUTPUT_COST = 0.5
+CYAN = "\001\033[36m\002"
+RESET = "\001\033[0m\002"
 
 class Chatbot:
     def __init__(self, system_prompt: str = SYSTEM_PROMPT):
@@ -82,7 +85,7 @@ def main():
     try:
         while True:
             try:
-                user_input = input("Tú: ").strip()
+                user_input = input(f"{CYAN}Tú: {RESET}").strip()
             except EOFError as e:
                 print(f"Error: {e}")
                 break
@@ -94,11 +97,12 @@ def main():
             if user_input.lower() == "/stats":
                 bot.show_stats()
                 continue
-            if user_input.lower() == "/reset":
+            if user_input.lower() in ["/reset", "/new", "/start", "/clear"]:
                 bot.history = []
                 bot.total_tokens = 0
                 bot.total_cost = 0.0
                 print("Nueva conversación iniciada.")
+                os.system("clear" if os.name != "nt" else "cls")
                 continue
             print("\nIA: ", end="", flush=True)
 
